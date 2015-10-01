@@ -18,8 +18,7 @@
   "dependencies": {
     "babel": "^5.8.23",
     "electron-debug": "^0.1.1",
-    "express": "^4.13.3",
-    "ping": "^0.1.10"
+    "express": "^4.13.3"
   },
   "devDependencies": {
     "electron-packager": "^5.0.0",
@@ -27,7 +26,6 @@
     "gulp": "^3.9.0",
     "gulp-load-plugins": "^0.10.0",
     "gulp-sass": "^2.0.4",
-    "gulp-sourcemaps": "^1.6.0",
-    "tcp-ping": "^0.1.1"
+    "gulp-sourcemaps": "^1.6.0"
   }
 }

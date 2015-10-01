@@ -1,35 +1,10 @@
-const http = require('http');
-const network = require('network');
-const ping = require('tcp-ping');
 const express = require('express');
 const app = express();
 
 const PORT = 25792;
-const HOST = '0.0.0.0';
-var gatewayPrefix;
-var connectedComputers = [];
 
 app.listen(PORT, function () {
-  console.log(`Server running at http://${HOST}:${PORT}/`);
-});
-
-
-network.get_private_ip(function(err, ip) {
-  if (err) {
-    return null;
-  } else {
-    const byteArray = ip.split('.');
-    const localByte = Number(byteArray.pop());
-    gatewayPrefix = byteArray.join('.');
-
-    for (let i = 0; i < 256; i++) {
-      ping.probe(`${gatewayPrefix}.${i}`, PORT, function(err, alive) {
-        if (alive) {
-          connectedComputers.push(i);
-        }
-      });
-    }
-  }
+  console.log(`Server running at http://localhost:${PORT}/`);
 });
 
 let drop = document.getElementsByTagName('body')[0];
@@ -40,9 +15,13 @@ function handleDrop(e) {
 
   // Dropped file.
   let file = e.dataTransfer.files[0];
+
+  // Make it downloadable on the root
   app.get('/', function (req, res) {
     res.download(file.path);
   });
+
+  // Clear dragging style
   drop.classList.remove('dragover');
 }
 

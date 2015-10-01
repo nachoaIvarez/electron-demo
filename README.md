@@ -1,6 +1,4 @@
-# Electron Boilerplate
-
-> With ES6 and SASS support!
+# Example application to demo the Electron Features in MVD JS Meetup.
 
 
 ## Dev
@@ -22,11 +20,6 @@ $ npm run build
 ```
 
 Builds the app for OS X, Linux, and Windows, using [electron-packager](https://github.com/maxogden/electron-packager).
-
-
-## Credits
-
-Based on [sindresorhus boilerplate](https://github.com/sindresorhus/electron-boilerplate).
 
 
 ## License
