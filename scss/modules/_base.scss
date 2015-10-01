@@ -1,0 +1,79 @@
+@import 'reset';
+@import 'variables';
+
+*,
+*::before,
+*::after {
+  border: 0;
+  box-sizing: border-box !important; // scss-lint:disable ImportantRule
+  -webkit-font-smoothing: antialiased;
+  outline: none;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  color: $dark-gray;
+  font-family: 'Montserrat', sans-serif;
+  font-feature-settings: 'onum';
+  font-size: 16px;
+  font-smooth: always; // scss-lint:disable PropertySpelling
+  font-weight: $regular;
+  line-height: 1.2em;
+}
+
+*[class*="mdl"] {
+  font-family: 'Lato', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.2em;
+}
+
+h1 {
+  font-size: 3.3em;
+  font-weight: $bold;
+}
+
+h2 {
+  font-size: 3em;
+  font-weight: $regular;
+}
+
+h3 {
+  font-size: 2.6em;
+  font-weight: $medium;
+}
+
+h4 {
+  font-size: 2.3em;
+  font-weight: $light;
+}
+
+h5 {
+  font-size: 2em;
+  font-weight: $medium;
+  letter-spacing: 1px;
+}
+
+h6 {
+  font-size: 1.6em;
+  font-weight: $medium;
+}
+
+%center {
+  align-content: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+%truncate-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

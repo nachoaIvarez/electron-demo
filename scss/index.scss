@@ -1,0 +1,38 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+@import 'modules/base';
+
+body {
+  @extend %center;
+  $distance: 50px;
+  height: 100vh;
+  overflow: hidden;
+  transition: all 150ms ease;
+  width: 100vw;
+
+  &::after {
+    border: 4px dashed $orange;
+    border-radius: 3px;
+    content: '';
+    height: calc(100vh - #{$distance});
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    transform: translateX($distance/2) translateY($distance/2);
+    transition: all 150ms ease;
+    width: calc(100vw - #{$distance});
+  }
+
+  &.dragover {
+    background-color: $white;
+
+    &::after {
+      opacity: 1;
+    }
+
+    main {
+      -webkit-filter: blur(8px);
+    }
+  }
+}
