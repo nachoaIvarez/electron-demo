@@ -4,10 +4,15 @@
 body {
   @extend %center;
   $distance: 50px;
+  background-image: linear-gradient(66deg, #0f9, #0af);
+  color: $white;
   height: 100vh;
   overflow: hidden;
+  padding: 40px;
+  text-align: center;
   transition: all 150ms ease;
   width: 100vw;
+
 
   &::after {
     border: 4px dashed $orange;
@@ -34,5 +39,15 @@ body {
     main {
       -webkit-filter: blur(8px);
     }
+  }
+
+  main {
+    transition: all 150ms ease;
+  }
+
+  span {
+    display: block;
+    color: #066;
+    padding: 20px 0
   }
 }
